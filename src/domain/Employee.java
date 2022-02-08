@@ -1,19 +1,50 @@
 package domain;
+
+/**
+ * Клас "співробітник"
+ * @author Посашков Влад
+ */
 public class Employee {
 
+    /**
+     * Метод для форматування інформації про співробітника
+     * @return рядок з детальною інформацією
+     */
     @Override
     public String toString() {
         return "\nEmployee ID= " + ID + "\nName= " + name + "\nJobTitle= " + jobTitle + "\nLevel= " + level + "\nDept= " + dept;
     }
 
+    /**
+     * Ім'я співробітника
+     */
     private String name;
+    /**
+     * Посада співробітника
+     */
     private String jobTitle;
+    /**
+     * Ідентифікатор співробітника
+     */
     private int ID;
+    /**
+     * Рівень співробітника
+     */
     private int level;
+    /**
+     * Відділ  співробітника
+     */
     private String dept;
 
    // private static int employeesCount = 0;
 
+   /**
+    * Конструктор класу "співробітник"
+    * @param name ім'я співорбітника
+    * @param jobTitle посада
+    * @param level рівень
+    * @param dept відділ
+    */
     public Employee(String name, String jobTitle, int level, String dept) {
         this();
         setName(name);
@@ -30,6 +61,9 @@ public class Employee {
         this.dept = dept;
     }
 
+    /**
+     * Конструктор класу "співробітник" за замовчуванням 
+     */
     public Employee() {
         ID = (int)(Math.random()*1000);
 //        if (ID > 10000) {
@@ -37,18 +71,34 @@ public class Employee {
 //        }
     }
 
+    /**
+     * Метод для встановлення посади
+     * @param job посада
+     */
     public void setJobTitle(String job) {
         jobTitle = job;
     }
 
+     /**
+     * Метод для отримання посади
+     * @return посада
+     */
     public String getJobTitle() {
         return jobTitle;
     }
 
+    /**
+     * Метод для отримання ім'я
+     * @return ім'я
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Метод для встановлення рівня
+     * @param level рівень
+     */
     public void setLevel(int level) {
         switch (level) {
             case 1:
@@ -61,18 +111,34 @@ public class Employee {
         }
     }
 
+    /**
+     * Метод для отримання рівня
+     * @return рівень
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Метод для отримання відділу
+     * @return відділ
+     */
     public String getDept() {
         return dept;
     }
 
+    /**
+     * Метод для встановлення відділу
+     * @param dept відділ
+     */
     public void setDept(String dept) {
         this.dept = dept;
     }
 
+    /**
+     * Метод для встановлення ім'я
+     * @param name ім'я
+     */
     public void setName(String name) {
 //        boolean correctName = true;
 //        for (int i = 0; i < name.length(); i++) {
